@@ -1,9 +1,9 @@
 # KataBankOCR
 Coding Dojo OCR Kata
 
-##Problem Description
+## Problem Description
 
-###User Story 1
+### User Story 1
 
 You work for a bank, which has recently purchased an ingenious machine to assist in reading letters and faxes sent in by branch offices. The machine scans the paper documents, and produces a file with a number of entries which each look like this:
 
@@ -15,7 +15,7 @@ Each entry is 4 lines long, and each line has 27 characters. The first 3 lines o
 
 Your first task is to write a program that can take this file and parse it into actual account numbers.
 
-###User Story 2
+### User Story 2
 
 Having done that, you quickly realize that the ingenious machine is not in fact infallible. Sometimes it goes wrong in its scanning. The next step therefore is to validate that the numbers you read are in fact valid account numbers. A valid account number has a valid checksum. This can be calculated as follows:
 
@@ -26,25 +26,25 @@ checksum calculation:
 `(d1+2*d2+3*d3 +..+9*d9) mod 11 = 0`
 So now you should also write some code that calculates the checksum for a given number, and identifies if it is a valid account number.
 
-###User Story 3
+### User Story 3
 
 Your boss is keen to see your results. He asks you to write out a file of your findings, one for each input file, in this format:
 
     457508000
     664371495 ERR
     86110??36 ILL
-ie the file has one account number per row. If some characters are illegible, they are replaced by a ?. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
+ie the file has one account number per row. If some characters are illegible, they are replaced by a `?`. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
 
-###User Story 4
+### User Story 4
 
-It turns out that often when a number comes back as ERR or ILL it is because the scanner has failed to pick up on one pipe or underscore for one of the figures. For example
+It turns out that often when a number comes back as `ERR` or `ILL` it is because the scanner has failed to pick up on one pipe or underscore for one of the figures. For example
 
         _  _  _  _  _  _     _
     |_||_|| || ||_   |  |  ||_
       | _||_||_||_|  |  |  | _|
-The 9 could be an 8 if the scanner had missed one |. Or the 0 could be an 8. Or the 1 could be a 7. The 5 could be a 9 or 6. So your next task is to look at numbers that have come back as ERR or ILL, and try to guess what they should be, by adding or removing just one pipe or underscore. If there is only one possible number with a valid checksum, then use that. If there are several options, the status should be AMB. If you still can't work out what it should be, the status should be reported ILL.
+The 9 could be an 8 if the scanner had missed one |. Or the 0 could be an 8. Or the 1 could be a 7. The 5 could be a 9 or 6. So your next task is to look at numbers that have come back as `ERR` or `ILL`, and try to guess what they should be, by adding or removing just one pipe or underscore. If there is only one possible number with a valid checksum, then use that. If there are several options, the status should be `AMB`. If you still can't work out what it should be, the status should be reported `ILL`.
 
-###Clues
+### Clues
 
 I recommend finding a way to write out 3x3 cells on 3 lines in your code, so they form an identifiable digits. Even if your code actually doesn't represent them like that internally. I'd much rather read
 
@@ -56,16 +56,16 @@ than
 anyday.
 When Christophe and Emmanuel presented this Kata at XP2005 they worked on a solution that made extensive use of recursion rather than iteration. Many people are more comfortable with iteration than recursion. Try this kata both ways.
 
-*Some gotchas to avoid:*
+#### Some gotchas to avoid:
 
  - be very careful to read the definition of checksum correctly. It is not a simple dot product, the digits are reversed from what you expect.
  - The spec does not list all the possible alternatives for valid digits when one pipe or underscore has been removed or added
- - don't forget to try to work out what a ? should have been by adding or removing one pipe or underscore.
-###Suggested Test Cases
+ - don't forget to try to work out what a `?` should have been by adding or removing one pipe or underscore.
+### Suggested Test Cases
 
 If you want to just copy and paste these test cases into your editor, I suggest first clicking "edit this page" so you can see the source. Then you can be sure to copy across all the whitespace necessary. Just don't save any changes by mistake.
 
-*use case 1*
+#### use case 1
     _  _  _  _  _  _  _  _  _
     | || || || || || || || || |
     |_||_||_||_||_||_||_||_||_|
@@ -122,7 +122,7 @@ If you want to just copy and paste these test cases into your editor, I suggest 
 
     => 123456789
 
-*use case 3*
+#### use case 3
      _  _  _  _  _  _  _  _
     | || || || || || || ||_   |
     |_||_||_||_||_||_||_| _|  |
@@ -139,7 +139,7 @@ If you want to just copy and paste these test cases into your editor, I suggest 
 
     => 1234?678? ILL
 
-*use case 4*
+#### use case 4
 
     |  |  |  |  |  |  |  |  |
     |  |  |  |  |  |  |  |  |
