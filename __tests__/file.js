@@ -18,8 +18,5 @@ describe('File handler', () => {
   pit('sanity checks the line length and line count of the input file',
   () => readFile(FILENAME_3)
   .then(sanityCheck)
-  .then(data => {
-    expect(data).toBeDefined();
-    console.log(`\n${data}`);
-  }));
+  .then(data => expect(data).toBeDefined()));
 });
