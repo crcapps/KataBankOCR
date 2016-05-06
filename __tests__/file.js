@@ -1,9 +1,9 @@
 import { readFile, sanityCheck } from '../src/file';
 
-const FILENAME_1 = `1.txt`;
-const FILENAME_3 = `3.txt`;
-const FILENAME_4 = `4.txt`;
-const BAD_FILENAME = `foo.txt`;
+const FILENAME_1 = '1.txt';
+const FILENAME_3 = '3.txt';
+const FILENAME_4 = '4.txt';
+const BAD_FILENAME = 'foo.txt';
 
 jest.mock('fs');
 jest.unmock('../src/file');
