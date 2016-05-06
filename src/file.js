@@ -11,6 +11,8 @@ export const readFile = filePath => new Promise((fulfill, reject) => {
   });
 });
 
+// Makes sure that the file conforms to line length and count ratios
+// Default is length of 27 in groups of 4
 export const sanityCheck = data => new Promise((fulfill, reject) => {
   let newLineRegex = /(\r\n|\n|\r)+/gm;
   let trimData = data.replace(newLineRegex, '');
