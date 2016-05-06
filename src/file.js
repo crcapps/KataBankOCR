@@ -17,9 +17,9 @@ export const sanityCheck = data => new Promise((fulfill, reject) => {
   let cleanData = data.replace(newLineRegex, '\n');
   let lineLength = (trimData.length) % constants.LINE_LENGTH;
   let lineCount = (trimData.length) % constants.LINE_COUNT;
-  if (lineLength === 0 && lineCount === 0) {
+  if (cleanData.length > 0 && lineLength === 0 && lineCount === 0) {
     fulfill(cleanData);
   } else {
-    reject(new RangeError(`Invalid input data.`));
+    reject(new Error(`Invalid input data.`));
   }
 });
