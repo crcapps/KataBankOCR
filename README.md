@@ -66,14 +66,14 @@ When Christophe and Emmanuel presented this Kata at XP2005 they worked on a solu
 If you want to just copy and paste these test cases into your editor, I suggest first clicking "edit this page" so you can see the source. Then you can be sure to copy across all the whitespace necessary. Just don't save any changes by mistake.
 
 #### use case 1
-    _  _  _  _  _  _  _  _  _
+     _  _  _  _  _  _  _  _  _
     | || || || || || || || || |
     |_||_||_||_||_||_||_||_||_|
 
     => 000000000
 
       |  |  |  |  |  |  |  |  |
-    |  |  |  |  |  |  |  |  |
+      |  |  |  |  |  |  |  |  |
 
     => 111111111
      _  _  _  _  _  _  _  _  _
@@ -81,7 +81,7 @@ If you want to just copy and paste these test cases into your editor, I suggest 
     |_ |_ |_ |_ |_ |_ |_ |_ |_
 
     => 222222222
-    _  _  _  _  _  _  _  _  _
+     _  _  _  _  _  _  _  _  _
      _| _| _| _| _| _| _| _| _|
      _| _| _| _| _| _| _| _| _|
 
@@ -150,7 +150,7 @@ If you want to just copy and paste these test cases into your editor, I suggest 
       |  |  |  |  |  |  |  |  |
 
     => 777777177
-         _  _  _  _  _  _  _  _  _
+     _  _  _  _  _  _  _  _  _
      _|| || || || || || || || |
     |_ |_||_||_||_||_||_||_||_|
 
