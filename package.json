@@ -1,0 +1,23 @@
+{
+  "name": "katanabankocr",
+  "version": "1.0.0",
+  "description": "Coding Dojo OCR Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crcapps/KataBankOCR.git"
+  },
+  "keywords": [
+    "kata",
+    "ocr"
+  ],
+  "author": "Casey Capps",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crcapps/KataBankOCR/issues"
+  },
+  "homepage": "https://github.com/crcapps/KataBankOCR#readme"
+}
