@@ -2,8 +2,9 @@
   "name": "katanabankocr",
   "version": "1.0.0",
   "description": "Coding Dojo OCR Kata",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node ./lib/index.js",
     "test": "jest",
     "build": "babel src -d lib"
   },
