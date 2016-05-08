@@ -15,6 +15,7 @@ jest.mock('fs');
 jest.unmock('../src/file');
 jest.unmock('../src/lexer');
 jest.unmock('../src/parser');
+jest.unmock('../src/checksum');
 
 describe('User Story 1: Parsing Numbers', () => {
 
@@ -26,7 +27,7 @@ describe('User Story 1: Parsing Numbers', () => {
   .then(data => {
     const first = data[0];
     expect(first.number).toContain('000000051');
-    expect(first.status).toContain(CHECKSUM_ERROR);
+    expect(first.status).toBeNull;
     const second = data[1];
     expect(second.number).toContain('49006771?');
     expect(second.status).toContain(ILLEGIBLE);
