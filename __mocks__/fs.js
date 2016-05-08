@@ -3,6 +3,7 @@ export const FILENAME_3 = '3.txt';
 export const FILENAME_4 = '4.txt';
 export const FILENAME_404 = 'bar.txt';
 export const FILENAME_OK = 'ok.txt';
+export const FILENAME_BAD = 'bad.txt';
 export const FILENAME_EMPTY = 'empty.txt';
 export const FILENAME_INVALID_CHARACTERS = 'characters.txt';
 export const FILENAME_INVALID_LINE_LENGTH = 'length.txt';
@@ -140,6 +141,11 @@ const FILE_BLANKLINE = ` _  _  _  _  _  _  _  _  _ \n
 |_||_||_||_||_||_||_||_||_|\n
                           _`;
 
+const FILE_BAD = ` _  _  _  _  _  _  _  _  _ \n
+|  | || || || || || || || |\n
+|_||_||_||_||_||_||_||_||_|\n
+                           `;
+
 const readFile = (filePath, callback) => {
   let error = null;
   let data = null;
@@ -155,6 +161,9 @@ const readFile = (filePath, callback) => {
       break;
     case FILENAME_OK:
       data = FILE_OK;
+      break;
+    case FILENAME_BAD:
+      data = FILE_BAD;
       break;
     case FILENAME_INVALID_CHARACTERS:
       data = FILE_CHARACTERS;
