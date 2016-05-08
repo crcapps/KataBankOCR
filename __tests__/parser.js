@@ -3,7 +3,7 @@ import { lexFile } from '../src/lexer';
 import { parseFile } from '../src/parser';
 
 import {
-  FILENAME_1,
+  FILENAME_OK,
 } from '../__mocks__/fs';
 
 jest.mock('fs');
@@ -12,7 +12,7 @@ jest.unmock('../src/lexer');
 jest.unmock('../src/parser');
 
 describe('', () => {
-  pit('', () => readFile(FILENAME_1)
+  pit('', () => readFile(FILENAME_OK)
   .then(sanityCheck)
   .then(lexFile)
   .then(parseFile));
