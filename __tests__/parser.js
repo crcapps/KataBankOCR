@@ -26,7 +26,7 @@ describe('Parser', () => {
     for (let line of data) {
       expect(line.number).toContain('000000000');
       expect(line.status).toBeNull();
-      expect(line.guesses.length).toEqual(0);
+      expect(line.guesses).toBeNull();
     }
   }));
 

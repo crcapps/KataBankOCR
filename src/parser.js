@@ -11,6 +11,7 @@ const S111 = '|_|';
 
 export const ILLEGIBLE = 'ILL';
 export const CHECKSUM_ERROR = 'ERR';
+export const AMBIGUOUS = 'AMB';
 
 const GRAMMAR = {
   [S000]: {
@@ -81,7 +82,7 @@ export const parseFile = file => new Promise((fulfill, reject) => {
       let parsedLine = {
         number: lineNumber,
         status: status,
-        guesses: [],
+        guesses: null,
       };
 
       lines.push(parsedLine);
