@@ -15,16 +15,7 @@ jest.mock('fs');
 jest.unmock('../src/file');
 jest.unmock('../src/lexer');
 jest.unmock('../src/parser');
-
-const logData = data => {
-  console.log('\n');
-  console.log(data);
-};
-
-const logError = error => {
-  console.log('\n');
-  console.error(error);
-};
+jest.unmock('../src/checksum');
 
 describe('Parser', () => {
   pit('parses a valid number', () => readFile(FILENAME_OK)

@@ -1,3 +1,5 @@
+import { checksum } from './checksum';
+
 const S000 = '   ';
 const S001 = '  |';
 const S010 = ' _ ';
@@ -8,6 +10,7 @@ const S110 = '|_ ';
 const S111 = '|_|';
 
 export const ILLEGIBLE = 'ILL';
+export const CHECKSUM_ERROR = 'ERR';
 
 const GRAMMAR = {
   [S000]: {
@@ -58,6 +61,12 @@ export const parseFile = file => new Promise((fulfill, reject) => {
         } catch (error) {
           lineNumber += '?';
           status = 'ILL';
+        }
+      }
+
+      if (!status) {
+        if (!checksum(lineNumber)) {
+          status = CHECKSUM_ERROR;
         }
       }
 
