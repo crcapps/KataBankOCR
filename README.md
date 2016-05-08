@@ -12,6 +12,8 @@ Coding Dojo OCR Kata
 `npm test`
 
 ### Deployment
+`npm start -- <infile> [outfile]`
+Input file `infile` is required.  Ouput file `outfile` is optional, defaults to stdout.
 
 ## Problem Description
 

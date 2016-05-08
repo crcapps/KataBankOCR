@@ -6,6 +6,16 @@ const NEWLINE_REGEX = /(\r\n|\n|\r)+/gm;
 const VALID_CHARACTER_REGEX = /^[ _\|\n]+$/g;
 const WHITESPACE_LINE_REGEX = /^ {27,27}$/;
 
+export const writeFile = (filePath, data) => new Promise((fulfill, reject) => {
+  fs.writeFile(filePath, data, (error) => {
+    if (error) {
+      reject(error);
+    } else {
+      fulfill((filePath, data));
+    }
+  });
+});
+
 export const readFile = filePath => new Promise((fulfill, reject) => {
   fs.readFile(filePath, (error, data) => {
     if (error) {
@@ -66,7 +76,7 @@ const validateFileContents = data => {
 export const sanityCheck = data => new Promise((fulfill, reject) => {
 
   // Normalize line endings.
-  const cleanData = data.replace(NEWLINE_REGEX, '\n');
+  const cleanData = data.toString().replace(NEWLINE_REGEX, '\n');
   const checksumValid = computeFileChecksum(cleanData);
   const contentsValid = validateFileContents(cleanData);
   if (checksumValid && contentsValid) {
