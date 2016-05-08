@@ -43,6 +43,20 @@ const GRAMMAR = {
   },
 };
 
+const matchSymbol = symbol => {
+  const noMatch = '?';
+  try {
+    let number = GRAMMAR[symbol[0]][symbol[1]][symbol[2]];
+    if (number === 0 || number) {
+      return number;
+    } else {
+      return noMatch;
+    }
+  } catch (error) {
+    return noMatch;
+  }
+};
+
 export const parseFile = file => new Promise((fulfill, reject) => {
   try {
     let lines = [];
@@ -50,18 +64,12 @@ export const parseFile = file => new Promise((fulfill, reject) => {
       let lineNumber = '';
       let status = null;
       for (let symbol of line) {
-        try {
-          let number = GRAMMAR[symbol[0]][symbol[1]][symbol[2]];
-          if (number === 0 || number) {
-            lineNumber += number;
-          } else {
-            lineNumber += '?';
-            status = 'ILL';
-          }
-        } catch (error) {
-          lineNumber += '?';
-          status = 'ILL';
+        let number = matchSymbol(symbol);
+        if (number == '?') {
+          status = ILLEGIBLE;
         }
+
+        lineNumber = `${lineNumber}${number}`;
       }
 
       if (!status) {
@@ -70,7 +78,7 @@ export const parseFile = file => new Promise((fulfill, reject) => {
         }
       }
 
-      const parsedLine = {
+      let parsedLine = {
         number: lineNumber,
         status: status,
         guesses: [],
