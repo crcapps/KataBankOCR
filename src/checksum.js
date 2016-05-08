@@ -1,4 +1,5 @@
 export const checksum = data => {
+  // Bounce non numeric input
   const numericRegex = /^\d+$/;
   if (!data.match(numericRegex)) {
     return false;

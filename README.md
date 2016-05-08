@@ -1,6 +1,18 @@
 # KataBankOCR
 Coding Dojo OCR Kata
 
+## Installation and deployment
+
+### Downloading and installation
+1) `git clone` this repository
+2) `npm install`
+3) `npm run build`
+
+### Running Tests
+`npm test`
+
+### Deployment
+
 ## Problem Description
 
 ### User Story 1
