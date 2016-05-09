@@ -14,7 +14,7 @@ To solve Story 4, I would have done as follows:
 3. If flipping a bit results in a valid number, run it through the checksum.
 4. This would be a good place to solve it recursively.
 5. If there are multiple invalid characters, continue the recursion for each.
-6. If no valid checksum is hit by any combination, the symbols remain.
+6. If no valid checksum is hit by any combination, the symbols remain `?`.
 7. If there are any `?` left in the string, the status remains `ILL`.
 8. If there are valid checksum hits, they are added to the `guesses` array.
 9. If there are any numbers in the guesses array, the status is marked `AMB`.
