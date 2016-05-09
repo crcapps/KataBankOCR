@@ -1,9 +1,14 @@
 # Notes
+
 ## Complete
+
 Stories 1-3 are complete and pass the test cases.
+
 ## Incomplete
+
 Story 4 was out of scope for the time I was supposed to spend on this kata.
 To solve Story 4, I would have done as follows:
+
 1. I have the components of each numeric symbol mapped to 9 bits in the grammar.
 2. To determine "one off," each zero is flipped individually to a one.
 3. If flipping a bit results in a valid number, run it through the checksum.

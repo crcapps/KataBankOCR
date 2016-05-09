@@ -4,14 +4,17 @@ Coding Dojo OCR Kata
 ## Installation and deployment
 
 ### Downloading and installation
+
 1. `git clone` this repository
 2. `npm install`
 3. `npm run build`
 
 ### Running Tests
+
 `npm test`
 
 ### Deployment
+
 `npm start -- <infile> [outfile]`
 Input file `infile` is required.  Ouput file `outfile` is optional, defaults to stdout.
 
