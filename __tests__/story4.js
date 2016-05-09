@@ -16,7 +16,7 @@ jest.unmock('../src/lexer');
 jest.unmock('../src/parser');
 jest.unmock('../src/checksum');
 
-describe('User Story 4: Parsing Numbers', () => {
+describe('User Story 4: Error Correction', () => {
 
   // Feed it the first use case data.
   pit('', () => readFile(FILENAME_4)
