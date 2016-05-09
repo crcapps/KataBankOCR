@@ -158,8 +158,8 @@ If you want to just copy and paste these test cases into your editor, I suggest 
 
 #### use case 4
 
-    |  |  |  |  |  |  |  |  |
-    |  |  |  |  |  |  |  |  |
+      |  |  |  |  |  |  |  |  |
+      |  |  |  |  |  |  |  |  |
 
     => 711111111
      _  _  _  _  _  _  _  _  _
